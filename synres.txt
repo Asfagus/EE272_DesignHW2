@@ -1,0 +1,1295 @@
+                                        
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+                                        
+              Version K-2015.06-SP5-1 for linux64 - Feb 26, 2016 
+                                        
+                    Copyright (c) 1988 - 2016 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+Initializing gui preferences from file  /home/014538550/.synopsys_dv_prefs.tcl
+set link_library {/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25 /apps/synopsys/I-2013.12-SP5/libraries/syn/dw_foundation.sldb}
+/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25 /apps/synopsys/I-2013.12-SP5/libraries/syn/dw_foundation.sldb
+set target_library {/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25}
+/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25
+read_sverilog perm.sv
+Loading db file '/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25'
+Loading db file '/apps/synopsys/I-2013.12-SP5/libraries/syn/dw_foundation.sldb'
+Loading db file '/apps/synopsys/SYNTH/libraries/syn/gtech.db'
+Loading db file '/apps/synopsys/SYNTH/libraries/syn/standard.sldb'
+  Loading link library 'tc240c'
+  Loading link library 'gtech'
+Loading sverilog file '/home/014538550/272/designhw2/perm.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/014538550/272/designhw2/perm.sv
+Opening include file ./in.sv
+Opening include file ./out.sv
+Warning:  ./in.sv:162: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./in.sv:163: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./in.sv:164: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./in.sv:165: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./in.sv:166: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./in.sv:167: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./in.sv:168: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Opening include file ./rounds.sv
+Warning:  ./out.sv:175: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./out.sv:176: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./out.sv:177: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./out.sv:178: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./out.sv:179: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./out.sv:180: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./out.sv:181: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./out.sv:182: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./out.sv:183: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rounds.sv:716: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rounds.sv:717: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rounds.sv:718: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rounds.sv:719: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rounds.sv:720: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rounds.sv:722: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rounds.sv:723: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rounds.sv:725: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rounds.sv:726: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rounds.sv:727: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rounds.sv:728: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rounds.sv:729: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rounds.sv:731: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rounds.sv:732: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rounds.sv:733: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+
+Statistics for case statements in always block at line 17 in file
+	'./in.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            18            |    auto/auto     |
+|            53            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine in line 152 in file
+		'./in.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       PS_reg        | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      m1wr_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      m1wx_reg       | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      m1wy_reg       | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      m1rx_reg       | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      m1ry_reg       | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      m1wd_reg       | Flip-flop |  64   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Statistics for case statements in always block at line 19 in file
+	'./out.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            20            |    auto/auto     |
+|            59            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine out line 163 in file
+		'./out.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     pushout_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      m4wr_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      m4wx_reg       | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      m4wy_reg       | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      m4rx_reg       | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      m4ry_reg       | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      m4wd_reg       | Flip-flop |  64   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       PS_reg        | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    firstout_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Statistics for case statements in always block at line 62 in file
+	'./rounds.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            75            |    auto/auto     |
+|           125            |    auto/auto     |
+|           422            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine rounds line 694 in file
+		'./rounds.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       PS_reg        | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      m2wr_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      m2wx_reg       | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      m2wy_reg       | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      m2rx_reg       | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      m2ry_reg       | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      m_wd_reg       | Flip-flop |  64   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   round_count_reg   | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      m3wr_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      m3wx_reg       | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      m3wy_reg       | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      m3rx_reg       | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      m3ry_reg       | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/home/014538550/272/designhw2/perm_blk.db:perm_blk'
+Loaded 4 designs.
+Current design is 'perm_blk'.
+perm_blk in out rounds
+current_design perm_blk
+Current design is 'perm_blk'.
+{perm_blk}
+create_clock clk -name clk -period 3.4875000000000003
+1
+set_propagated_clock clk
+Information: set_input_delay values are added to the propagated clock skew. (TIM-113)
+1
+set_clock_uncertainty 0.25 clk
+1
+set_propagated_clock clk
+Information: set_input_delay values are added to the propagated clock skew. (TIM-113)
+1
+set_output_delay 0.5 -clock clk [all_outputs]
+1
+set all_inputs_wo_rst_clk [remove_from_collection [remove_from_collection [all_inputs] [get_port clk]] [get_port reset]]
+Warning: Can't find port 'reset' in design 'perm_blk'. (UID-95)
+{rst pushin firstin din[63] din[62] din[61] din[60] din[59] din[58] din[57] din[56] din[55] din[54] din[53] din[52] din[51] din[50] din[49] din[48] din[47] din[46] din[45] din[44] din[43] din[42] din[41] din[40] din[39] din[38] din[37] din[36] din[35] din[34] din[33] din[32] din[31] din[30] din[29] din[28] din[27] din[26] din[25] din[24] din[23] din[22] din[21] din[20] din[19] din[18] din[17] din[16] din[15] din[14] din[13] din[12] din[11] din[10] din[9] din[8] din[7] din[6] din[5] din[4] din[3] din[2] din[1] din[0] m1rd[63] m1rd[62] m1rd[61] m1rd[60] m1rd[59] m1rd[58] m1rd[57] m1rd[56] m1rd[55] m1rd[54] m1rd[53] m1rd[52] m1rd[51] m1rd[50] m1rd[49] m1rd[48] m1rd[47] m1rd[46] m1rd[45] m1rd[44] m1rd[43] m1rd[42] m1rd[41] m1rd[40] m1rd[39] m1rd[38] m1rd[37] m1rd[36] m1rd[35] m1rd[34] m1rd[33] m1rd[32] m1rd[31] ...}
+set_driving_cell -lib_cell CND2X1 $all_inputs_wo_rst_clk
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+1
+set_input_delay 0.6 -clock clk $all_inputs_wo_rst_clk
+1
+set_output_delay 0.6 -clock clk [all_outputs]
+1
+set_fix_hold [ get_clocks clk ]
+1
+set_host_options -max_cores 4
+1
+set_output_delay 0.3 -clock clk [all_outputs]
+1
+set_max_delay 3.255 -from [all_inputs] -to [all_outputs]
+1
+compile_ultra
+Information: Performing power optimization. (PWR-850)
+Alib files are up-to-date.
+Information: Running optimization using a maximum of 4 cores. (OPT-1500)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | K-2015.06-DWBB_201506.5.1 |   *     |
+| Licensed DW Building Blocks        | I-2013.12-DWBB_201312.5 |     *     |
+============================================================================
+
+Information: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)
+
+Information: There are 164 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+  Simplifying Design 'perm_blk'
+
+Loaded alib file './alib-52/tc240c.db_NOMIN25.alib'
+  Building model 'DW01_NAND2'
+Information: Ungrouping hierarchy in1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy out1 before Pass 1 (OPT-776)
+Information: Ungrouping 2 of 4 hierarchies before Pass 1 (OPT-775)
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'rounds'
+Information: Added key list 'DesignWare' to design 'rounds'. (DDB-72)
+Information: The register 'PS_reg[4]' is a constant and will be removed. (OPT-1206)
+ Implement Synthetic for 'rounds'.
+  Processing 'perm_blk'
+Information: Added key list 'DesignWare' to design 'perm_blk'. (DDB-72)
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: Input delay ('fall') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Warning: Main library 'tc240c' does not specify the following unit required for power: 'Leakage Power'. (PWR-424)
+
+  Beginning Mapping Optimizations  (Ultra High effort)
+  -------------------------------
+  Mapping Optimization (Phase 1)
+
+  Beginning Constant Register Removal
+  -----------------------------------
+
+  Beginning Global Optimizations
+  ------------------------------
+  Numerical Synthesis (Phase 1)
+  Numerical Synthesis (Phase 2)
+  Global Optimization (Phase 1)
+  Global Optimization (Phase 2)
+  Global Optimization (Phase 3)
+  Global Optimization (Phase 4)
+  Global Optimization (Phase 5)
+  Global Optimization (Phase 6)
+  Global Optimization (Phase 7)
+  Global Optimization (Phase 8)
+  Global Optimization (Phase 9)
+  Global Optimization (Phase 10)
+  Global Optimization (Phase 11)
+  Global Optimization (Phase 12)
+  Global Optimization (Phase 13)
+  Global Optimization (Phase 14)
+  Global Optimization (Phase 15)
+  Global Optimization (Phase 16)
+  Global Optimization (Phase 17)
+  Global Optimization (Phase 18)
+  Global Optimization (Phase 19)
+  Global Optimization (Phase 20)
+  Global Optimization (Phase 21)
+  Global Optimization (Phase 22)
+  Global Optimization (Phase 23)
+  Global Optimization (Phase 24)
+  Global Optimization (Phase 25)
+  Global Optimization (Phase 26)
+  Global Optimization (Phase 27)
+  Global Optimization (Phase 28)
+  Global Optimization (Phase 29)
+  Global Optimization (Phase 30)
+  Global Optimization (Phase 31)
+Information: Input delay ('fall') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('fall') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clk' will be added to the clock's propagated skew. (TIM-112)
+
+  Beginning Isolate Ports
+  -----------------------
+
+  Beginning Delay Optimization
+  ----------------------------
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:00:10    5024.5      0.12       0.5     114.3                              0.0000      0.00  
+    0:00:10    5030.0      0.00       0.0     114.3                              0.0000      0.00  
+    0:00:10    5030.0      0.00       0.0     114.3                              0.0000      0.00  
+    0:00:11    5011.5      0.00       0.0     546.9                              0.0000      0.00  
+
+  Beginning WLM Backend Optimization
+  --------------------------------------
+    0:00:12    5011.0      0.00       0.0     546.9                              0.0000      0.00  
+    0:00:12    5010.0      0.00       0.0     546.9                              0.0000      0.00  
+    0:00:12    5010.0      0.00       0.0     546.9                              0.0000      0.00  
+    0:00:12    5010.0      0.00       0.0     546.9                              0.0000      0.00  
+    0:00:12    5010.0      0.00       0.0     546.9                              0.0000      0.00  
+    0:00:12    5010.0      0.00       0.0     546.9                              0.0000      0.00  
+    0:00:12    5010.0      0.00       0.0     546.9                              0.0000      0.00  
+    0:00:12    5010.0      0.00       0.0     546.9                              0.0000      0.00  
+    0:00:12    5010.0      0.00       0.0     546.9                              0.0000      0.00  
+    0:00:12    5010.0      0.00       0.0     546.9                              0.0000      0.00  
+    0:00:12    5010.0      0.00       0.0     546.9                              0.0000      0.00  
+    0:00:12    5010.0      0.00       0.0     546.9                              0.0000      0.00  
+    0:00:12    5010.0      0.00       0.0     546.9                              0.0000      0.00  
+    0:00:12    5010.0      0.00       0.0     546.9                              0.0000      0.00  
+    0:00:12    5010.0      0.00       0.0     546.9                              0.0000      0.00  
+    0:00:12    5010.0      0.00       0.0     546.9                              0.0000      0.00  
+    0:00:12    5010.0      0.00       0.0     546.9                              0.0000      0.00  
+    0:00:12    5010.0      0.00       0.0     546.9                              0.0000      0.00  
+    0:00:12    5010.0      0.00       0.0     546.9                              0.0000      0.00  
+    0:00:12    5010.0      0.00       0.0     546.9                              0.0000      0.00  
+
+
+  Beginning Design Rule Fixing  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:00:12    5010.0      0.00       0.0     546.9                              0.0000      0.00  
+  Global Optimization (Phase 32)
+  Global Optimization (Phase 33)
+  Global Optimization (Phase 34)
+    0:00:12    5007.0      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:12    5007.0      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:12    5007.0      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:12    5007.0      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:12    5007.0      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:12    5007.0      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:12    5007.0      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:12    5007.0      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:12    5007.0      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:12    5007.0      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:12    5007.0      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:12    5007.0      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:12    5007.0      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:12    5007.0      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:12    5007.0      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:12    5007.0      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:12    5007.0      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:12    5007.0      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:12    5007.0      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:12    5007.0      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:12    5007.0      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:12    5007.0      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:12    5007.0      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:12    5007.0      0.00       0.0       0.0                              0.0000      0.00  
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:00:12    5007.0      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:13    4997.0      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:13    4997.0      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:13    4997.0      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:13    4997.0      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:13    4948.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:13    4948.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:13    4948.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:13    4948.5      0.00       0.0       0.0                              0.0000      0.00  
+    0:00:13    4922.0      0.00       0.0       0.0                              0.0000      0.00  
+Loading db file '/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Information: State dependent leakage is now switched from off to on.
+Warning: Main library 'tc240c' does not specify the following unit required for power: 'Leakage Power'. (PWR-424)
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+1
+create_clock clk -name clk -period 4.65
+1
+update_timing
+Information: Updating design information... (UID-85)
+1
+report_timing -max_paths 5
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 5
+Design : perm_blk
+Version: K-2015.06-SP5-1
+Date   : Tue Oct 27 14:13:23 2020
+****************************************
+
+Operating Conditions: NOMIN25   Library: tc240c
+Wire Load Model Mode: top
+
+  Startpoint: r1/m2rx_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: r1/m_wd_reg[50]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  r1/m2rx_reg[0]/CP (CFD2QX1)              0.00       0.00 r
+  r1/m2rx_reg[0]/Q (CFD2QX1)               0.32       0.32 f
+  r1/U1155/Z (CND2X1)                      0.12       0.44 r
+  r1/U1158/Z (CIVX2)                       0.08       0.52 f
+  r1/U1170/Z (CANR2X1)                     0.15       0.67 r
+  r1/U825/Z (CND3X1)                       0.13       0.80 f
+  r1/U43/Z (CNR2X2)                        0.23       1.03 r
+  r1/U1182/Z (CND2X1)                      0.27       1.30 f
+  r1/U1215/Z (CIVX2)                       0.06       1.36 r
+  r1/U478/Z (CNIVX4)                       0.17       1.54 r
+  r1/U1216/Z (CND2X1)                      0.09       1.63 f
+  r1/U1219/Z (COND3X1)                     0.09       1.71 r
+  r1/U1220/Z (CAOR1X1)                     0.17       1.88 r
+  r1/U276/Z (CIVXL)                        0.06       1.94 f
+  r1/U221/Z (CANR2XL)                      0.14       2.08 r
+  r1/U1614/Z (COND1XL)                     0.11       2.19 f
+  r1/U1615/Z (CANR1XL)                     0.19       2.38 r
+  r1/U2179/Z (COND2X1)                     0.15       2.53 f
+  r1/U2180/Z (CANR3X1)                     0.19       2.72 r
+  r1/U2181/Z (COND1XL)                     0.11       2.83 f
+  r1/U58/Z (COR2XL)                        0.15       2.98 f
+  r1/m_wd_reg[50]/D (CFD2QXL)              0.00       2.98 f
+  data arrival time                                   2.98
+
+  clock clk (rise edge)                    4.65       4.65
+  clock network delay (ideal)              0.00       4.65
+  clock uncertainty                       -0.25       4.40
+  r1/m_wd_reg[50]/CP (CFD2QXL)             0.00       4.40 r
+  library setup time                      -0.22       4.18
+  data required time                                  4.18
+  -----------------------------------------------------------
+  data required time                                  4.18
+  data arrival time                                  -2.98
+  -----------------------------------------------------------
+  slack (MET)                                         1.20
+
+
+  Startpoint: r1/m2rx_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: r1/m_wd_reg[63]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  r1/m2rx_reg[1]/CP (CFD2QX1)              0.00       0.00 r
+  r1/m2rx_reg[1]/Q (CFD2QX1)               0.29       0.29 f
+  r1/U1146/Z (CIVX2)                       0.06       0.36 r
+  r1/U42/Z (CNR2X1)                        0.09       0.44 f
+  r1/U1163/Z (CIVX2)                       0.05       0.50 r
+  r1/U41/Z (CND2X1)                        0.10       0.60 f
+  r1/U1174/Z (CND2X1)                      0.07       0.66 r
+  r1/U38/Z (CND3XL)                        0.17       0.83 f
+  r1/U1180/Z (CNR2X2)                      0.16       0.99 r
+  r1/U1181/Z (CIVX2)                       0.10       1.09 f
+  r1/U1182/Z (CND2X1)                      0.17       1.26 r
+  r1/U1215/Z (CIVX2)                       0.08       1.34 f
+  r1/U52/Z (CNIVX1)                        0.28       1.62 f
+  r1/U400/Z (CND2XL)                       0.09       1.71 r
+  r1/U386/Z (CAN3X1)                       0.17       1.88 r
+  r1/U1379/Z (CND2X1)                      0.08       1.96 f
+  r1/U1383/Z (CAOR2XL)                     0.23       2.19 f
+  r1/U1384/Z (CANR1XL)                     0.17       2.36 r
+  r1/U1385/Z (CND2X1)                      0.12       2.48 f
+  r1/U1580/Z (CMXI2X1)                     0.12       2.59 r
+  r1/U2159/Z (COND1XL)                     0.11       2.70 f
+  r1/U2165/Z (CANR2X1)                     0.14       2.85 r
+  r1/U65/Z (CND4XL)                        0.13       2.98 f
+  r1/m_wd_reg[63]/D (CFD2QXL)              0.00       2.98 f
+  data arrival time                                   2.98
+
+  clock clk (rise edge)                    4.65       4.65
+  clock network delay (ideal)              0.00       4.65
+  clock uncertainty                       -0.25       4.40
+  r1/m_wd_reg[63]/CP (CFD2QXL)             0.00       4.40 r
+  library setup time                      -0.22       4.18
+  data required time                                  4.18
+  -----------------------------------------------------------
+  data required time                                  4.18
+  data arrival time                                  -2.98
+  -----------------------------------------------------------
+  slack (MET)                                         1.20
+
+
+  Startpoint: r1/m2rx_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: r1/m_wd_reg[28]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  r1/m2rx_reg[1]/CP (CFD2QX1)              0.00       0.00 r
+  r1/m2rx_reg[1]/Q (CFD2QX1)               0.29       0.29 f
+  r1/U1146/Z (CIVX2)                       0.06       0.36 r
+  r1/U42/Z (CNR2X1)                        0.09       0.44 f
+  r1/U1163/Z (CIVX2)                       0.05       0.50 r
+  r1/U41/Z (CND2X1)                        0.10       0.60 f
+  r1/U1174/Z (CND2X1)                      0.07       0.66 r
+  r1/U38/Z (CND3XL)                        0.17       0.83 f
+  r1/U1180/Z (CNR2X2)                      0.16       0.99 r
+  r1/U1181/Z (CIVX2)                       0.10       1.09 f
+  r1/U1182/Z (CND2X1)                      0.17       1.26 r
+  r1/U1215/Z (CIVX2)                       0.08       1.34 f
+  r1/U52/Z (CNIVX1)                        0.28       1.62 f
+  r1/U390/Z (CND2XL)                       0.08       1.69 r
+  r1/U1484/Z (CND3XL)                      0.16       1.86 f
+  r1/U1564/Z (CNR2X1)                      0.17       2.02 r
+  r1/U1747/Z (COND2X1)                     0.12       2.15 f
+  r1/U15/Z (CANR3X1)                       0.24       2.38 r
+  r1/U2187/Z (CNR2X1)                      0.08       2.47 f
+  r1/U2188/Z (CANR3X1)                     0.18       2.65 r
+  r1/U2189/Z (CANR3XL)                     0.11       2.75 f
+  r1/U2190/Z (COR3XL)                      0.22       2.97 f
+  r1/m_wd_reg[28]/D (CFD2QXL)              0.00       2.97 f
+  data arrival time                                   2.97
+
+  clock clk (rise edge)                    4.65       4.65
+  clock network delay (ideal)              0.00       4.65
+  clock uncertainty                       -0.25       4.40
+  r1/m_wd_reg[28]/CP (CFD2QXL)             0.00       4.40 r
+  library setup time                      -0.22       4.18
+  data required time                                  4.18
+  -----------------------------------------------------------
+  data required time                                  4.18
+  data arrival time                                  -2.97
+  -----------------------------------------------------------
+  slack (MET)                                         1.21
+
+
+  Startpoint: r1/m2rx_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: r1/m_wd_reg[26]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  r1/m2rx_reg[0]/CP (CFD2QX1)              0.00       0.00 r
+  r1/m2rx_reg[0]/Q (CFD2QX1)               0.32       0.32 f
+  r1/U1155/Z (CND2X1)                      0.12       0.44 r
+  r1/U1158/Z (CIVX2)                       0.08       0.52 f
+  r1/U1170/Z (CANR2X1)                     0.15       0.67 r
+  r1/U825/Z (CND3X1)                       0.13       0.80 f
+  r1/U43/Z (CNR2X2)                        0.23       1.03 r
+  r1/U1186/Z (CND2X4)                      0.19       1.22 f
+  r1/U1245/Z (CNR2X2)                      0.10       1.32 r
+  r1/U1248/Z (COR2X1)                      0.16       1.48 r
+  r1/U1250/Z (CND2X2)                      0.11       1.59 f
+  r1/U1254/Z (CND2X1)                      0.06       1.65 r
+  r1/U45/Z (CNIVX1)                        0.31       1.96 r
+  r1/U1302/Z (COND2X1)                     0.18       2.14 f
+  r1/U1307/Z (CANR3X1)                     0.24       2.38 r
+  r1/U1310/Z (CNR2X1)                      0.08       2.45 f
+  r1/U125/Z (COND11XL)                     0.13       2.59 r
+  r1/U1312/Z (CANR1XL)                     0.12       2.71 f
+  r1/U1327/Z (CANR3X1)                     0.18       2.90 r
+  r1/U1328/Z (CIVXL)                       0.07       2.97 f
+  r1/m_wd_reg[26]/D (CFD2QXL)              0.00       2.97 f
+  data arrival time                                   2.97
+
+  clock clk (rise edge)                    4.65       4.65
+  clock network delay (ideal)              0.00       4.65
+  clock uncertainty                       -0.25       4.40
+  r1/m_wd_reg[26]/CP (CFD2QXL)             0.00       4.40 r
+  library setup time                      -0.21       4.19
+  data required time                                  4.19
+  -----------------------------------------------------------
+  data required time                                  4.19
+  data arrival time                                  -2.97
+  -----------------------------------------------------------
+  slack (MET)                                         1.22
+
+
+  Startpoint: r1/m2rx_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: r1/m_wd_reg[23]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  r1/m2rx_reg[0]/CP (CFD2QX1)              0.00       0.00 r
+  r1/m2rx_reg[0]/Q (CFD2QX1)               0.32       0.32 f
+  r1/U1155/Z (CND2X1)                      0.12       0.44 r
+  r1/U1158/Z (CIVX2)                       0.08       0.52 f
+  r1/U1170/Z (CANR2X1)                     0.15       0.67 r
+  r1/U825/Z (CND3X1)                       0.13       0.80 f
+  r1/U43/Z (CNR2X2)                        0.23       1.03 r
+  r1/U1186/Z (CND2X4)                      0.19       1.22 f
+  r1/U1245/Z (CNR2X2)                      0.10       1.32 r
+  r1/U572/Z (CIVX1)                        0.07       1.40 f
+  r1/U1247/Z (CND2X2)                      0.10       1.50 r
+  r1/U1267/Z (CIVX2)                       0.07       1.57 f
+  r1/U46/Z (CND2X1)                        0.27       1.84 r
+  r1/U1286/Z (CIVX2)                       0.18       2.02 f
+  r1/U312/Z (CAOR2XL)                      0.24       2.26 f
+  r1/U2134/Z (CANR3X1)                     0.21       2.48 r
+  r1/U2192/Z (COND3X1)                     0.13       2.61 f
+  r1/U2193/Z (CANR4CX1)                    0.21       2.82 r
+  r1/U92/Z (CND4XL)                        0.14       2.96 f
+  r1/m_wd_reg[23]/D (CFD2QXL)              0.00       2.96 f
+  data arrival time                                   2.96
+
+  clock clk (rise edge)                    4.65       4.65
+  clock network delay (ideal)              0.00       4.65
+  clock uncertainty                       -0.25       4.40
+  r1/m_wd_reg[23]/CP (CFD2QXL)             0.00       4.40 r
+  library setup time                      -0.22       4.18
+  data required time                                  4.18
+  -----------------------------------------------------------
+  data required time                                  4.18
+  data arrival time                                  -2.96
+  -----------------------------------------------------------
+  slack (MET)                                         1.22
+
+
+1
+write -hierarchy -format verilog -output perm_gates.v
+Writing verilog file '/home/014538550/272/designhw2/perm_gates.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+1
+quit
+
+Thank you...
