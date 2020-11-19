@@ -2,7 +2,7 @@
 //
 `timescale 1ns/10ps
 
-`include "perm_gates.v"
+`include "perm.sv"
 
 module top();
 reg clk,reset;
@@ -21,8 +21,7 @@ typedef struct packed {
 	reg [199:0] dat;
 } DD;
 
-int picnt=20;
-int tlimit=40;
+int picnt=80;
 int damt;
 
 DD fifoout[$];
@@ -144,18 +143,6 @@ initial begin
 			"o": begin
 				junk=$sscanf(line,"%*c %d %x",dix,din);
 				push_out(dix,din);
-				if(dix==7) begin
-					tlimit -=1;
-					if(tlimit < 0) begin
-						repeat(100) @(posedge(clk)) #1;
-						if(fifoout.size()>0) begin
-							die($sformatf("not all data pushed out in 100 clocks\n    %d items left",fifoout.size()));
-						end else begin
-							$display("\n\n\nOh what joy, you passed the test\n\n\n");
-						end
-						$finish;
-					end
-				end
 			end
 			"e":  begin
 				repeat(100) @(posedge(clk))#1;
@@ -175,13 +162,14 @@ initial begin
 end
 
 perm p(clk,reset,dix[2:0],din,pushin,doutix,dout,pushout);
-/*
+
+
 initial begin
     $dumpfile("perm.vcd");
     $dumpvars(9,top);
-    repeat(18) @(posedge(clk));
+    repeat(500) @(posedge(clk));
     $dumpoff;
 
 end
-*/
+
 endmodule : top

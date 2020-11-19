@@ -1,6 +1,6 @@
 #@ # 
 #@ # Running dc_shell Version K-2015.06-SP5-1 for linux64 -- Feb 26, 2016
-#@ # Date:   Tue Oct 27 14:15:06 2020
+#@ # Date:   Mon Nov  2 17:49:39 2020
 #@ # Run by: 01453855@coe-ee-cad4.sjsuad.sjsu.edu
 #@ 
 
@@ -3800,17 +3800,30 @@ source /apps/synopsys/SYNTH/admin/setup/.synopsys_dc.setup
 #@ }
 #@ # -- End source /apps/synopsys/SYNTH/admin/setup/.synopsys_dc.setup
 
-man report_area
-report_area
-read nochw2.sv
-read_file nochw2.sv
-report_area
-read_file perm.sv
-report_area
-read_file nochw2.sv
-report_area
-read_file noc_gates.v
-report_area
-check_timing
-report_timing
-exit
+source -echo -verbose /home/014538550/272/designhw1/original/designhw1/synthesis.script
+#@ # -- Starting source /home/014538550/272/designhw1/original/designhw1/synthesis.script
+
+#@ set link_library {/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25 /apps/synopsys/I-2013.12-SP5/libraries/syn/dw_foundation.sldb}
+#@ set target_library {/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25}
+#@ read_sverilog perm.sv
+#@ current_design perm_blk
+#@ create_clock clk -name clk -period 3.4875000000000003
+#@ set_propagated_clock clk
+#@ set_clock_uncertainty 0.25 clk
+#@ set_propagated_clock clk
+#@ set_output_delay 0.5 -clock clk [all_outputs]
+#@ set all_inputs_wo_rst_clk [remove_from_collection [remove_from_collection [all_inputs] [get_port clk]] [get_port reset]]
+#@ set_driving_cell -lib_cell CND2X1 $all_inputs_wo_rst_clk
+#@ set_input_delay 0.6 -clock clk $all_inputs_wo_rst_clk
+#@ set_output_delay 0.6 -clock clk [all_outputs]
+#@ set_fix_hold [ get_clocks clk ]
+#@ set_host_options -max_cores 4
+#@ set_output_delay 0.3 -clock clk [all_outputs]
+#@ set_max_delay 3.255 -from [all_inputs] -to [all_outputs]
+#@ compile_ultra
+#@ create_clock clk -name clk -period 4.65
+#@ 
+#@ update_timing
+#@ report_timing -max_paths 5
+#@ write -hierarchy -format verilog -output perm_gates.v
+#@ quit

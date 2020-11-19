@@ -165,7 +165,8 @@ always @ (*)begin
 	perm_finish=0;
 	ns_out=cs_out;
 	perm_copy=0;
-			//To put data in 25 locations mem1 
+	if (pushin&&!m1_done)begin
+		//To put data in 25 locations mem1 
 		case(cs)
 			reset_state:begin
 				//Start reset wx,wy in mem1
@@ -175,22 +176,19 @@ always @ (*)begin
 				//m1wd=din;
 				m1rx_d=0;
 				m1ry_d=0;
-				
-				
+				m1wr=1'b1;
+				m1wd=din;
+				m1wx_d=m1wx+1;
 				//ns=load_state;
 				
-				if(firstin && pushin && !m1_done) begin
+				if(firstin) begin
 					ns=load_state;
 					m1rx_d=m1rx+1;
-					m1wx_d=m1wx+1;
-					m1wr=1'b1;
-					m1wd=din;
 				end
 				else ns=reset_state;
 				
 			end
-			load_state:begin	
-			if (pushin)begin		
+			load_state:begin			
 				//Increment m1wx until 5 steps
 				if (m1wx>=4)begin
 					m1wx_d=0;
@@ -219,7 +217,7 @@ always @ (*)begin
 					m1_done_d=0;
 					ns=load_state;
 				end
-			end
+				
 			end
 			done_state:begin
 				if(next_data) begin
@@ -237,7 +235,7 @@ always @ (*)begin
 				m1wx_d=0;	
 			end
 		endcase
-	
+	end
 	if(next_data) 
 		stopin_d=0;
 	
@@ -246,7 +244,7 @@ always @ (*)begin
 		reset_perm:begin
 			round_d=0;
 			c_round_d=0;		//Have not reset this at top, might create a latch
-			if(m1_done&&cs==2)begin
+			if(m1_done)
 				ns_perm=copym1m2;
 			m1rx_d=0;
 			m1ry_d=0;
@@ -265,12 +263,11 @@ always @ (*)begin
 			chi_done=0;
 			chi_ctr_d<=chi_ctr;
 			//next_data_d<=next_data;
-			end
 		//	$display("perm reset state");
 		end
 		copym1m2:begin
 		//copy data from m1 to m2
-		if (cs==2)begin
+		
 			//code for copying m3 to m1
 			m1wr=0;
 			m2wr=1;
@@ -302,7 +299,7 @@ always @ (*)begin
 			end
 			else ns_perm=copym1m2;
 		//	$display("copym3m1:m1wd:%h,m3rd:%h m1wx:%h,m1wy:%h",m1wd,m3rd,m1wx,m1wy);
-		end
+		
 		end	
 		findC:begin
 			//$display("perm findC state,m1ry:%d,m1rx:%d,c_round_d:%d m1rd:%h m1_done:%b r1=%h",m1ry,m1rx,c_round_d,m1rd,m1_done,r1);
@@ -353,24 +350,11 @@ always @ (*)begin
 				m3wr=1;	//might be for C
 				ns_perm=dummy;
 				
-				// copied dummy state here
-				ns_perm=findD;
-				//m3wr=0;
-				//start from these values for D
-				m2ry_d=0;
-				j_d=j+1;
-				m2rx_d=cxminus1[i];	//4
-				m3ry_d=0;
-				m3rx_d=cxplus1[i];   	//1
-				m3wx_d=0;
-				m3wy_d=1;	//Store D in m3 y=1
-				
 			end
 			else ns_perm=findC;
 					
 			c_round_d=c_round+1;			
 		end
-		//removed
 		dummy:begin
 			ns_perm=findD;
 			m3wr=0;
@@ -430,7 +414,7 @@ always @ (*)begin
 				i_d=0;
 
 				//resetting ffs for theta take i/p from m1,m3 store in m2
-				//m1wr=0;
+				m1wr=0;
 				//m3wr=0;
 				m1ry_d=0;
 				m1rx_d=0;
@@ -443,7 +427,7 @@ always @ (*)begin
 				//new theta setup copied frojm cpm1m2
 				//new theta setup
 				//resetting ffs for theta take i/p from m1,m3 store in m2
-				//m1wr=0;
+				m1wr=0;
 				m1ry_d=0;
 				m1rx_d=0;
 				
@@ -461,7 +445,7 @@ always @ (*)begin
 	
 		dotheta:begin
 			theta_start=1;
-			//m1wr=0;
+			m1wr=0;
 			m3wr=0;
 
 			//added m2
@@ -508,30 +492,8 @@ always @ (*)begin
 			 ns_perm=dotheta1;
 			
 			//$display(" Thetam1ry:%h,m1rx:%h,m1rd:%h m3ry:%h,m3rx:%h,m3rd:%h m2wy:%h,m2wx:%h,m2wd:%h",m1ry,m1rx,m1rd,m3ry,m3rx,m3rd,m2wy,m2wx,r3_d);
-			//copied from theta1
-			if (m2wx>=4)begin
-				m2wx_d=0;
-				if (m2wy>=4)begin
-					m2wy_d=0;
-				end
-				else begin
-					m2wy_d=m2wy+1;			
-				end
-			end
-			else begin
-				m2wx_d=m2wx+1; 
-			end
-
-			m2wr=1;
-			m2wd=r3_d;
-
-			ns_perm=dotheta;
-
-			if(m2wx==4&&m2wy==4)begin
-				ns_perm=dorho;
-			end
+			
 		end
-		//removed state
 		dotheta1:begin
 			//m2write here
 
@@ -602,25 +564,10 @@ always @ (*)begin
 				m2wy_d=0;
 				r1_d=0;
 				r2_d=0;*/
-				
-				//copied from donothing
-				//m3wr=0;
-				m2wr=0;
-				ns_perm=dochi1;
-
-				m3rx_d=0;
-				m3ry_d=0;
-
-				//prep for dochi1
-				m3rx_d=modulo(m3rx+1,5);	//modulo x+1
-				m3ry_d=0;
-
 			end
 			else ns_perm=dorho;
 			//$display("RHOPI:r1_d:%h,r2_d:%d,r3_d:%h,m2rx:%h,m2ry:%h,m3wx:%h,m3wy:%h(x*2+3*y)",r1_d,r2_d,r3_d,m2rx,m2ry,m3wx,m3wy);
-			
 		end
-		//removed state
 		//step5
 		donothing:begin
 			m3wr=0;
@@ -630,10 +577,7 @@ always @ (*)begin
 			m3ry_d=0;
 			
 		end
-		//removed state
-		//to remove this state, change chi1, ch2, chi3 to use m3 instead of m2
 		copym3tom2:begin
-			//state 10
 			m2wr=1;
 			m3wr=0;
 			//Increment m3r	//changed ffs x,y
@@ -656,75 +600,18 @@ always @ (*)begin
 			
 			if(m3rx==4&&m3ry==4)begin
 				ns_perm=dochi1;
-			
-				/*			
-				m2rx_d=modulo(m2rx+1,5);	//modulo x+1
-				m2ry_d=0;
-				m2wx_d=0;
-				m2wy_d=0;
-				*/
-				//changing to m3
 				m2rx_d=modulo(m2rx+1,5);	//modulo x+1
 				m2ry_d=0;
 				m2wx_d=0;
 				m2wy_d=0;
 			end
 			else ns_perm=copym3tom2;
+			
 		//	$display("copy:m2wd:%h,m3rd:%h m2wx:%h,m2wy:%h",m2wd,m3rd,m2wx,m2wy);
 		end
 		//step7
-		dochi1:begin
-		//changing m2 with m3 
-
+		dochi1:begin 
 		//read from m2, store +1 in m3
-		//it shoiuld start a cycle ahead than prev stage
-			m3wr=0;
-			m2wr=1;
-			
-			//inc m2 for read
-			if (m3ry>=4)begin
-				m3ry_d=0;
-				m3rx_d=modulo(m3rx+1,5);	//for ~B(x+1)
-			end
-			else begin
-				m3ry_d=m3ry+1;			
-			end	 
-			
-			//Increment m3w	
-			if (m2wy>=4)begin
-				m2wy_d=0;
-				if (m2wx>=4)begin
-					m2wx_d=0;
-				end
-				else begin
-					m2wx_d=m2wx+1;			
-				end
-			end
-			else begin
-				m2wy_d=m2wy+1; 
-			end
-			
-			r1_d=m3rd;
-			r2_d=~r1_d;
-			
-			m2wd=r2_d;
-									
-			if(m2wy==4 &&m2wx==4) begin
-				ns_perm=dochi2;
-				//reset ffs for chi2
-				m3rx_d=modulo(m3rx+2,5);	//modulo x+2
-				m3ry_d=0;
-				m3wx_d=0;
-				m3wy_d=0;
-			end
-			else begin
-				ns_perm=dochi1;
-			end
-		//	$display("dochi1:m2rd(r1_d):%h,m3wd(r2_d):%h m3wx:%h,m3wy:%h,m2rx:%h,m2ry:%h",m2rd,m3wd,m3wx,m3wy,m2rx,m2ry);
-		
-		//old logic with extra copym3m2 stage
-/*
-	//read from m2, store +1 in m3
 		//it shoiuld start a cycle ahead than prev stage
 			m2wr=0;
 			m3wr=1;
@@ -769,84 +656,9 @@ always @ (*)begin
 				ns_perm=dochi1;
 			end
 		//	$display("dochi1:m2rd(r1_d):%h,m3wd(r2_d):%h m3wx:%h,m3wy:%h,m2rx:%h,m2ry:%h",m2rd,m3wd,m3wx,m3wy,m2rx,m2ry);
-		
-*/
 		end
-		//state11
+		//step8
 		dochi2:begin
-			//read from m2, store +2 in m3 after & with it
-			//it shoiuld start 1 cycles ahead than prev stage
-			m3wr=0;
-			m2wr=0;
-			
-			//inc m2 for read
-			if (m3ry>=4)begin
-				m3ry_d=0;
-				if (m3rx>=4)begin
-					m3rx_d=0;
-				end
-				else begin
-					m3rx_d=m3rx+1;			
-				end
-				
-			end
-			else begin
-				m3ry_d=m3ry+1;			
-			end	 
-			
-			//Increment m3r	
-			if (m2ry>=4)begin
-				m2ry_d=0;
-				if (m2rx>=4)begin
-					m2rx_d=0;
-				end
-				else begin
-					m2rx_d=m2rx+1;			
-				end
-			end
-			else begin
-				m2ry_d=m2ry+1; 
-			end
-			
-			//Increment m3w	
-			if (m2wy>=4)begin
-				m2wy_d=0;
-				if (m2wx>=4)begin
-					m2wx_d=0;
-				end
-				else begin
-					m2wx_d=m2wx+1;			
-				end
-			end
-			else begin
-				m2wy_d=m2wy+1; 
-			end
-			m2wr=0;
-			r1_d=m3rd;	//x+2
-			r2_d=m2rd;	//~(x+1)
-			r3_d=r1_d&r2_d;	//~B(x+1) & B(x+2)
-			m2wr=1;
-			m2wd=r3_d;
-									
-			if(m2wy==4 &&m2wx==4) begin
-				ns_perm=dochi3;
-				//reset ffs for chi3
-				m3rx_d=0;	
-				m3ry_d=0;
-				m3wx_d=0;
-				m3wy_d=0;
-			end
-			else begin
-				ns_perm=dochi2;
-			end
-		//	$display("dochi2:r3_d:%h,m3wx;%h,m3wy;%h,m2rx:%h,m2ry:%h",r3_d,m3wx,m3wy,m2rx,m2ry);
-		
-	
-	
-	
-/*
-			//old 
-			
 			//read from m2, store +2 in m3 after & with it
 			//it shoiuld start 1 cycles ahead than prev stage
 			m2wr=0;
@@ -913,113 +725,9 @@ always @ (*)begin
 				ns_perm=dochi2;
 			end
 		//	$display("dochi2:r3_d:%h,m3wx;%h,m3wy;%h,m2rx:%h,m2ry:%h",r3_d,m3wx,m3wy,m2rx,m2ry);
-		*/
 		end
 		dochi3:begin 
-			//read from m2 and store in m2, m3
 			//read from m2, store B(x,y) in m3 after ^ with m3
-			//also storing in m2 to save clock cycle
-			//it shoiuld start 1 cycles ahead than prev stage
-			m3wr=0;
-			m2wr=0;
-			
-			//Increment m2r	
-			if (m3ry>=4)begin
-				m3ry_d=0;
-				if (m3rx>=4)begin
-					m3rx_d=0;
-				end
-				else begin
-					m3rx_d=m3rx+1;			
-				end
-			end
-			else begin
-				m3ry_d=m3ry+1; 
-			end
-			
-			//Increment m3r	
-			if (m2ry>=4)begin
-				m2ry_d=0;
-				if (m2rx>=4)begin
-					m2rx_d=0;
-				end
-				else begin
-					m2rx_d=m2rx+1;			
-				end
-			end
-			else begin
-				m2ry_d=m2ry+1; 
-			end
-			
-			//Increment m3w	
-			if (m2wy>=4)begin
-				m2wy_d=0;
-				if (m2wx>=4)begin
-					m2wx_d=0;
-				end
-				else begin
-					m2wx_d=m2wx+1;			
-				end
-			end
-			else begin
-				m2wy_d=m2wy+1; 
-			end
-			
-			m2wr=0;
-			r1_d=m3rd;	//x
-			r2_d=m2rd;	//~B(x+1) & B(x+2)
-			r3_d=r1_d^r2_d;	//
-			m2wr=1;
-			m2wd=r3_d;
-			
-			
-			//iota
-			if(m2wy==0 &&m2wx==0) begin
-				
-				m2wr=0;
-				r1_d=m3rd;	//x
-				r2_d=m2rd;	//~B(x+1) & B(x+2)
-				r3_d=r1_d^r2_d^cmx[round];	//
-				m2wr=1;
-				m2wd=r3_d;
-				
-			end
-									
-			if(m2wy==4 &&m2wx==4) begin
-				ns_perm=doout;
-				//reset ffs 
-				m2wx_d=0;
-				m2wy_d=0;
-				//m3wr=0;		//might break 0,0 or might miss 4,4
-
-				//m2 write stuff
-				m3wx_d=0;
-				m3wy_d=0;
-
-
-				//iota
-				if (round==24)	
-					round_d=0;
-				else round_d=round+1;
-			end
-			else begin
-				ns_perm=dochi3;
-			end
-		//	$display("dochi3:r3_d:%h,m3wx;%h,m3wy;%h",r3_d,m3wx,m3wy);
-
-			//try to store in m2
-			
-			m3wr=1;
-			//m2 stuff
-			m3wd=m2wd;
-			m3wx_d=m2wx_d;
-			m3wy_d=m2wy_d;
-
-/*
-			//old
-			//read from m2 and store in m2, m3
-			//read from m2, store B(x,y) in m3 after ^ with m3
-			//also storing in m2 to save clock cycle
 			//it shoiuld start 1 cycles ahead than prev stage
 			m2wr=0;
 			m3wr=0;
@@ -1072,22 +780,9 @@ always @ (*)begin
 			r3_d=r1_d^r2_d;	//
 			m3wr=1;
 			m3wd=r3_d;
-			
-			
-			//iota
-			if(m3wy==0 &&m3wx==0) begin
-				
-				m3wr=0;
-				r1_d=m2rd;	//x
-				r2_d=m3rd;	//~B(x+1) & B(x+2)
-				r3_d=r1_d^r2_d^cmx[round];	//
-				m3wr=1;
-				m3wd=r3_d;
-				
-			end
 									
 			if(m3wy==4 &&m3wx==4) begin
-				ns_perm=doout;
+				ns_perm=doiota;
 				//reset ffs 
 				m3wx_d=0;
 				m3wy_d=0;
@@ -1097,11 +792,6 @@ always @ (*)begin
 				m2wx_d=0;
 				m2wy_d=0;
 
-
-				//iota
-				if (round==24)	
-					round_d=0;
-				else round_d=round+1;
 			end
 			else begin
 				ns_perm=dochi3;
@@ -1116,12 +806,7 @@ always @ (*)begin
 			m2wx_d=m3wx_d;
 			m2wy_d=m3wy_d;
 
-
-
-*/
-
 		end
-		//removed state
 		doiota:begin
 			//  A[0,0] = A[0,0] xor RC
 			//also storing in m2 to save clock cycle
@@ -1219,15 +904,11 @@ always @ (*)begin
 				//copy perm state high might fail if sending out takes too long
 				perm_copy=1;	
 			//	$display("DONE PERM");
-				//adding below states to reduce cycles
-				ns_perm=reset_perm;
-				firstout=0;
 			end
 			else begin 
 				ns_perm=findC;
 			end
 		end
-		//removed state
 		copym3m4:begin
 			m4wr=1;
 			m3wr=0;
@@ -1252,26 +933,19 @@ always @ (*)begin
 			if(m3rx==4&&m3ry==4)begin
 				ns_perm=doneoutput;	//changed to LAST state
 								//setting flag for 3rd sm
-				//perm_finish=1;
-				//added from last states
-				ns_perm=reset_perm;
-				//perm_finish=0; //set perm finish to low
-				//add condition for round 0
-				firstout=0;
+				perm_finish=1;
 			end
 			else ns_perm = copym3m4;
 	//		$display("copym3m4:m4wd:%h,m3rd:%h m4wx:%h,m4wy:%h",m4wd,m3rd,m4wx,m4wy);
 		end
-		//removed state
 		done_perm:begin
 			//check if 3rd sm finishes
 			ns_perm=doneoutput;
-			//perm_finish=0; //set perm finish to low
+			perm_finish=0; //set perm finish to low
 		end
-		//removed state
 		doneoutput:begin
 			ns_perm=reset_perm;
-			//perm_finish=0; //set perm finish to low
+			perm_finish=0; //set perm finish to low
 			//add condition for round 0
 			firstout=0;
 		end
@@ -1315,9 +989,9 @@ always @ (*)begin
 		m4wd=m3rd;
 		
 		if(m3rx==4&&m3ry==4)begin
-			ns_out=working_out;	//changed to LAST state
+			ns_out=reset_out;	//changed to LAST state
 							//setting flag for 3rd sm
-			//perm_finish=1;
+			perm_finish=1;
 			perm_copy=0;
 		end
 	//		$display("copym3m4:m4wd:%h,m3rd:%h m4wx:%h,m4wy:%h",m4wd,m3rd,m4wx,m4wy);
@@ -1449,5 +1123,4 @@ function integer modulo;
 endfunction 
 
 endmodule
-
 
